@@ -8,6 +8,9 @@ import cardgames.deck.Rank;
 import cardgames.deck.Suit;
 
 /**
+ * PokerUtils
+ * contains util functions
+ * 
  * @author srijith
  *
  */
@@ -15,6 +18,7 @@ public class PokerUtils {
 
 	
 	/**
+	 * returns true if the cards all of the same suit
 	 * @param cards
 	 * @return
 	 */
@@ -89,6 +93,7 @@ public class PokerUtils {
 	}
 
 	/**
+	 * returns true if the hand is of type Straight
 	 * @param cards
 	 * @return
 	 */
@@ -96,8 +101,6 @@ public class PokerUtils {
 		return getHighStraight(cards) != -1;
 	}
 
-
-	
 	/**
 	 * @param rankFrequencies
 	 * @param xOfAKind  - 4 for 4ofAKind , 3 for 3OfAKind
@@ -116,6 +119,8 @@ public class PokerUtils {
 	}
 	
 	/**
+	 * if the hand has 4 identical rank cards (rankFrequency for that rank will be 4)
+	 * then it returns the rank. e.g., if hand is [S14 , C14, D14, E14 , H2] return 14 (Rank.Ace)
 	 * @param cards
 	 * @return
 	 */
@@ -139,6 +144,8 @@ public class PokerUtils {
 	}
 	
 	/**
+	 * if the hand has 3 identical rank cards (rankFrequency for that rank will be 3)
+	 * then it returns the rank. e.g., if hand is [S14 , C14, D14, E3 , H2] return 14 (Rank.Ace)
 	 * @param cards
 	 * @return
 	 */
@@ -147,6 +154,11 @@ public class PokerUtils {
 	}
 
 	/**
+	 * returns the pairRanks List if a hand has pairs. The highest rank pair  
+	 * will be the first element in the list followed by the next high rank pair
+	 * 
+	 * e.g., if hand is [S2, C2, S5, D9, H9] returns list -> [Rank.Nine , Rank.2]
+	 * 
 	 * @param rankFrequencies
 	 * @return
 	 */
@@ -167,6 +179,13 @@ public class PokerUtils {
 		return getPairRanks(getRankFrequencies(cards));
 	}
 	
+	/**
+	 * returns 1 if hand1 has a higher high card than hand 2, -1 the other way around
+	 * and 0 if they have the same ranks
+	 * @param hand1RankFrequencies
+	 * @param hand2RankFrequencies
+	 * @return
+	 */
 	public static int compareHighCard(
 			int[] hand1RankFrequencies, int[] hand2RankFrequencies) {
 		int i=14, j=14;
