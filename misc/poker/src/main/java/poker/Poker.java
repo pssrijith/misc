@@ -11,6 +11,7 @@ import poker.hands.PokerHandBuilder;
 public class Poker {
 
 	/**
+	 * The main Poker class
 	 * @author srijith
 	 *
 	 */
@@ -21,6 +22,10 @@ public class Poker {
 	}
 
 	/**
+	 * takes 2 hands (each hand an array of 5 cards) and creates PokherHand objects via the PokerHandBuilder
+	 * Returns Result.hand1Wins if cards1 is better than cards2, Result.hand2Wins if vice versa and Result.draw 
+	 * when the poker hands are the same.
+	 * 
 	 * @param cards1
 	 * @param cards2
 	 * @return
