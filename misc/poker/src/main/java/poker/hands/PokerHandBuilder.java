@@ -10,8 +10,10 @@ import cardgames.deck.Rank;
 import poker.PokerUtils;
 
 /**
+ * Builder class that returns an appropriate PokerHands implementation
+ * Uses rank frequency(rank histogram) to identify the poker hand type and creates the
+ * appropriate PokerHand object
  * @author srijith
- *
  */
 public class PokerHandBuilder {
 	
